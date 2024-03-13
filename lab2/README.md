@@ -1,4 +1,4 @@
-# Lab1
+# Lab2
 
 ## Introduction
 
@@ -6,7 +6,7 @@ In this lab, you will write unit tests for functions implemented in `main.js`. Y
 
 ## Requirement
 
-1. Write test cases in `main_test.js` and achieve 100% code coverage. (100%)
+1. Write test cases in `main_test.js` and achieve 100% code coverage. Remember to use Mock, Spy, or Stub when necessary, you need to at least use one of them in your test cases. (100%)
 
 You can run `validate.sh` in your local to test if you satisfy the requirements.
 
