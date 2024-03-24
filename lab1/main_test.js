@@ -2,56 +2,63 @@ const test = require('node:test');
 const assert = require('assert');
 const { MyClass, Student } = require('./main');
 
+
+
+
 test("Test MyClass's addStudent", () => {
-    try {
+
         const myClass = new MyClass();
-        const student = new Student();
-        student.setName("John");
-        const studentId = myClass.addStudent(student);
-        assert.equal(studentId, 0);
-        assert.equal(myClass.getStudentById(0).getName(), "John");
-    }
-    catch (error) {
-        console.error(error);
-    }
+        const sam = new Student();
+        sam.setName('Sam')
+        const result = myClass.addStudent(sam)
+        assert.strictEqual(result,0)
+
+        const  emptyStudent = myClass.addStudent(100.12)
+        assert.strictEqual(emptyStudent,-1)
+
 });
 
 test("Test MyClass's getStudentById", () => {
-    try {
+
+ 
         const myClass = new MyClass();
-        const names = ['John', 'Jane', 'Doe', 'Smith'];
-        names.forEach(name => {
-            const student = new Student();
-            student.setName(name);
-            myClass.addStudent(student);
-        });
-        names.forEach((name,index) => {
-            assert.equal(myClass.getStudentById(index).getName(), name);
-        })
-    }
-    catch (error) {
-        console.error(error);
-    }
+        const sam = new Student(); 
+        sam.setName("sam")
+        myClass.addStudent(sam)
+        const retrieveStudent = myClass.getStudentById(0)
+        assert.strictEqual(retrieveStudent,sam)
+
+        const retrieveEmpty1 =  myClass.getStudentById(-1)
+        assert.strictEqual(retrieveEmpty1,null)
+
+        const retrieveEmpty2 =  myClass.getStudentById(1)
+        assert.strictEqual(retrieveEmpty2,null)
+
 });
 
 test("Test Student's setName", () => {
-    try {
+    
+
         const student = new Student();
-        let studentName = 'John';
-        student.setName(studentName);
-        assert.equal(student.getName(), studentName);
-    }
-    catch (error) {
-        console.error(error);
-    }
+
+        student.setName(123)
+        assert.strictEqual(student.name,undefined)
+
+
+        student.setName("Sam")
+        assert.strictEqual(student.name,"Sam")
+
 });
 
 test("Test Student's getName", () => {
-    try {
+    
+    
         const student = new Student();
-        assert.equal(student.getName(), '');
-    }
-    catch (error) {
-        console.error(error);
-    }
+        assert.strictEqual(student.getName(),'')
+
+
+        student.setName("Sam")
+        assert.strictEqual(student.getName(),"Sam")
+
+  
 });
