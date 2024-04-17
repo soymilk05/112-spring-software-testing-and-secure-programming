@@ -1,23 +1,23 @@
-# Lab4
+# Lab5
 
 ## Introduction
 
-In this lab, you will write tests in `main_test.js`. You can learn how to use [Puppeteer](https://pptr.dev/) to tests a web UI.
+In this lab, you will write a function antoasan to bypass detection of ASan in `antiasan.c` and answer questions of slide in `Answer.md`.
 
 ## Preparation (Important!!!)
 
 1. Sync fork your branch (e.g., `SQLab:311XXXXXX`)
-2. `git checkout -b lab4` (**NOT** your student ID !!!)
+2. `git checkout -b lab5` (**NOT** your student ID !!!)
 
 ## Requirement
 
-1. (100%) Goto https://pptr.dev/, type `chipi chipi chapa chapa` into the search box, click on **1st** result in the **Docs** section, and print the title.
+1. (50%) Test Valgrind and ASan to detect common memory corruption vulns, and then asnwer result, report of Valgrind/ASan and Vulnerable code in `Answer.md`.
+2. (40%) Write a vulnerable code to bypass redzone between 2 int [8] arrays and asnwer reason and code in `Answer.md`.
 
-For the detailed steps and hints, please check the slide of this lab.
-
+3. (30%) write a function antoasan to bypass detection of ASan in `antiasan.c`.
 You can run `validate.sh` in your local to test if you satisfy the requirements.
 
-Please note that you must not alter files other than `main_test.js`. You will get 0 points if
+Please note that you must not alter files other than `antiasan.c` and `Answer.md`. You will get 0 points if
 
 1. you modify other files to achieve requirements.
 2. you can't pass all CI on your PR.
