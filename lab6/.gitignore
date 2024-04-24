@@ -1,0 +1,3 @@
+fuzz/
+!fuzz/out/crashes/id:000000*
+src/bmpcomp
